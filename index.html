@@ -10,18 +10,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>NAVIGATION BAR</title>
   </head>
-    <nav class="navbar navbar-defualt navbar-fixed-top" role="navigation">
-          <div class="container">
-  <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">toggle navigation</span>
-            <span class"icon-bar"></span>
-            <span class"icon-bar"></span>
-            <span class"icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">DCA</a>
-        </div>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">DCA</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About Me</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+
+
+
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-collapse -->
+    </nav>
+  <div class="container-fluid">
+  	<div class="row">
 
 
 
@@ -39,7 +71,41 @@
 
 
 
-  <body>
 
-  </body>
-</html>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+       <script
+         src="https://code.jquery.com/jquery-3.2.1.min.js "
+         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+         crossorigin=" anonymous "></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
+         <script type="text/javascript">
+           $(document).ready(function() {
+      var $lightbox = $('#lightbox');
+
+      $('[data-target="#lightbox"]').on('click', function(event) {
+          var $img = $(this).find('img'),
+              src = $img.attr('src'),
+              alt = $img.attr('alt'),
+              css = {
+                  'maxWidth': $(window).width() - 100,
+                  'maxHeight': $(window).height() - 100
+              };
+
+          $lightbox.find('.close').addClass('hidden');
+          $lightbox.find('img').attr('src', src);
+          $lightbox.find('img').attr('alt', alt);
+          $lightbox.find('img').css(css);
+      });
+
+      $lightbox.on('shown.bs.modal', function (e) {
+          var $img = $lightbox.find('img');
+
+          $lightbox.find('.modal-dialog').css({'width': $img.width()});
+          $lightbox.find('.close').removeClass('hidden');
+      });
+  });
+         </script>
+     </body>
+   </html>
